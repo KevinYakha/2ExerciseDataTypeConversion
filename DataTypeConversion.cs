@@ -12,6 +12,8 @@ namespace DataTypeConversion
 
         public static string pangram = "The quick brown fox jumps over the lazy dog";
 
+        public static string orderStream = "B123,C234,A345,C15,B177,G3003,C235,B179";
+
         public static void Main(string[] args)
         {
             CultureInfo.CurrentCulture = new CultureInfo("en-US");
@@ -45,7 +47,10 @@ namespace DataTypeConversion
                 Array.Reverse(temp);
                 words[i] = new string(temp);
             }
-            Console.WriteLine(string.Join(" ", words));
+            Console.WriteLine(string.Join(" ", words) + "\n");
+
+            foreach (string order in orderStream.Split(','))
+                Console.WriteLine(order.Length == 4 ? order : order + "\t- Error");
         }
     }
 }
