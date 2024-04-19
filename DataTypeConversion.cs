@@ -10,6 +10,8 @@ namespace DataTypeConversion
         public static decimal value2 = 6.2m;
         public static float value3 = 4.3f;
 
+        public static string pangram = "The quick brown fox jumps over the lazy dog";
+
         public static void Main(string[] args)
         {
             CultureInfo.CurrentCulture = new CultureInfo("en-US");
@@ -34,7 +36,16 @@ namespace DataTypeConversion
             Console.WriteLine($"Divide value2 by value3, display the result as a decimal: {result2}");
 
             float result3 = value3 / value1;
-            Console.WriteLine($"Divide value3 by value1, display the result as a float: {result3}");
+            Console.WriteLine($"Divide value3 by value1, display the result as a float: {result3}\n");
+
+            string[] words = pangram.Split(' ');
+            for (int i = 0; i < words.Length; i++)
+            {
+                char[] temp = words[i].ToCharArray();
+                Array.Reverse(temp);
+                words[i] = new string(temp);
+            }
+            Console.WriteLine(string.Join(" ", words));
         }
     }
 }
