@@ -6,9 +6,9 @@ namespace DataTypeConversion
     {
         public static string[] values = { "12.3", "45", "ABC", "11", "DEF" };
 
-        int value1 = 11;
-        decimal value2 = 6.2m;
-        float value3 = 4.3f;
+        public static int value1 = 11;
+        public static decimal value2 = 6.2m;
+        public static float value3 = 4.3f;
 
         public static void Main(string[] args)
         {
@@ -26,9 +26,9 @@ namespace DataTypeConversion
             Console.WriteLine("Message: " + message);
             Console.WriteLine("Total: " + sum);
 
-            // Your code here to set result1
+            decimal result1 = Convert.ToDecimal(value1) / value2;
             // Hint: You need to round the result to nearest integer (don't just truncate)
-            Console.WriteLine($"Divide value1 by value2, display the result as an int: {result1}");
+            Console.WriteLine($"\nDivide value1 by value2, display the result as an int: {result1}");
 
             // Your code here to set result2
             Console.WriteLine($"Divide value2 by value3, display the result as a decimal: {result2}");
