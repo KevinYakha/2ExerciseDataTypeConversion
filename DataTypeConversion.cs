@@ -26,7 +26,7 @@ namespace DataTypeConversion
             Console.WriteLine("Message: " + message);
             Console.WriteLine("Total: " + sum);
 
-            decimal result1 = Convert.ToDecimal(value1) / value2;
+            int result1 = Convert.ToInt32(value1 / value2);
             // Hint: You need to round the result to nearest integer (don't just truncate)
             Console.WriteLine($"\nDivide value1 by value2, display the result as an int: {result1}");
 
